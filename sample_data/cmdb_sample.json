@@ -1,0 +1,20 @@
+{
+  "cis": [
+    {"sys_id": "ci001", "name": "demo-web-01", "sys_class_name": "cmdb_ci_linux_server", "serial_number": "SN-DEMO-1001", "owned_by": "user_a", "support_group": "grp_linux", "environment": "production", "last_discovered": "2026-09-20 03:00:00", "operational_status": "1"},
+    {"sys_id": "ci002", "name": "demo-web-02", "sys_class_name": "cmdb_ci_linux_server", "serial_number": "SN-DEMO-1002", "owned_by": "user_a", "support_group": "grp_linux", "environment": "production", "last_discovered": "2026-06-01 03:00:00", "operational_status": "1"},
+    {"sys_id": "ci003", "name": "DEMO-WEB-02", "sys_class_name": "cmdb_ci_linux_server", "serial_number": "SN-DEMO-1002", "owned_by": "", "support_group": "grp_linux", "environment": "production", "last_discovered": "2026-09-21 03:00:00", "operational_status": "1"},
+    {"sys_id": "ci004", "name": "demo-db-01", "sys_class_name": "cmdb_ci_db_mssql_instance", "serial_number": "", "owned_by": "user_b", "support_group": "grp_dba", "environment": "production", "last_discovered": "2026-09-22 03:00:00", "operational_status": "1"},
+    {"sys_id": "ci005", "name": "demo-spare-laptop", "sys_class_name": "cmdb_ci_computer", "serial_number": "SN-DEMO-2001", "owned_by": "", "support_group": "", "environment": "", "last_discovered": "", "operational_status": "1"},
+    {"sys_id": "ci006", "name": "demo-retired-srv", "sys_class_name": "cmdb_ci_win_server", "serial_number": "SN-DEMO-3001", "owned_by": "user_c", "support_group": "grp_windows", "environment": "test", "last_discovered": "2025-01-10 03:00:00", "operational_status": "6"},
+    {"sys_id": "app01", "name": "Demo Online Banking", "sys_class_name": "cmdb_ci_business_app", "serial_number": "", "owned_by": "user_d", "support_group": "grp_app", "environment": "production", "last_discovered": "", "operational_status": "1"},
+    {"sys_id": "app02", "name": "Demo Claims Portal", "sys_class_name": "cmdb_ci_business_app", "serial_number": "", "owned_by": "user_d", "support_group": "grp_app", "environment": "production", "last_discovered": "", "operational_status": "1"},
+    {"sys_id": "svc01", "name": "Demo Online Banking - PROD", "sys_class_name": "cmdb_ci_service_discovered", "serial_number": "", "owned_by": "user_d", "support_group": "grp_app", "environment": "production", "last_discovered": "", "operational_status": "1"}
+  ],
+  "relationships": [
+    {"parent": "app01", "child": "svc01", "type": "Consumes::Consumed by"},
+    {"parent": "svc01", "child": "ci001", "type": "Depends on::Used by"},
+    {"parent": "svc01", "child": "ci002", "type": "Depends on::Used by"},
+    {"parent": "ci001", "child": "ci004", "type": "Depends on::Used by"},
+    {"parent": "svc01", "child": "ci006", "type": "Depends on::Used by"}
+  ]
+}
